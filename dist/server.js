@@ -19,7 +19,7 @@ app.use(routes_1.router);
 app.use('/files', express_1.default.static(path_1.default.resolve(__dirname, '..', 'tmp')));
 app.use((err, req, res, next) => {
     if (err instanceof Error) {
-        res.status(400).json({
+        return res.status(400).json({
             error: err.message
         });
     }
